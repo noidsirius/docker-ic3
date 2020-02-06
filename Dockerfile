@@ -26,6 +26,6 @@ RUN dpkg --add-architecture i386 && \
 
 WORKDIR /app
 COPY . /app
-#CMD ["echo","Salam"]
+ENV APKS /APKs
+CMD ["sh", "-c", "./run.sh ${APKS}"]
 #ENTRYPOINT ["./a.sh"]
-#CMD ["./run.sh"]
